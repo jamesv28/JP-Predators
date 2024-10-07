@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import MapKit
 struct ContentView: View {
     let predators = Predators()
     @State var searchText: String = ""
@@ -23,7 +23,7 @@ struct ContentView: View {
         NavigationStack {
             List(filteredDinos) { predator in
                 NavigationLink {
-                    DetailView(predator: predator)
+                    DetailView(position: .camera(MapCamera(centerCoordinate: predator.location, distance: 3000)), predator: predator)
                         
                 } label: {
                     HStack {
