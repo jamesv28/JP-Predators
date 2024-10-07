@@ -23,7 +23,7 @@ struct ApexPredator: Decodable, Identifiable {
         name.lowercased().replacingOccurrences(of: " ", with: "")
     }
     
-    struct MovieScene: Decodable {
+    struct MovieScene: Decodable, Identifiable {
         let id: Int
         let movie: String
         let sceneDescription: String
@@ -59,7 +59,7 @@ enum PredatorType: String, Decodable, CaseIterable, Identifiable {
         switch self {
             
         case .all:
-            "square.stack.3d.fill"
+            "square.stack.3d.up.fill"
         case .land:
             "leaf.fill"
         case .air:
